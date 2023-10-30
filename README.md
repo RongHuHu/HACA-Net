@@ -47,7 +47,18 @@ Dataset  | Command
 ## nuScenes dataset
 To train a model on the nuScenes dataset, you can execute one of the following commands from within the `Transformer/` directory, depending on the model version you desire.
 
-
+# Model Evaluation
+To evaluate a trained model, you can execute the following commands:
+## ETH/UCY
+Dataset  | Command
+ ---- | -----
+ ETH  | python evaluate-eth.py --model /data/lirh/ETH/eth --checkpoint=150 --data ../ETH/eth_test_map_full.pkl --output_path results --output_tag eth --node_type PEDESTRIAN --prediction_horizon 12   
+ HOTEL  | python evaluate-eth.py --model /data/lirh/ETH/hotel --checkpoint=150 --data ../ETH/hotel_test_map_full.pkl --output_path results --output_tag hotel --node_type PEDESTRIAN --prediction_horizon 12    
+ UNIV  | python evaluate-eth.py --model /data/lirh/ETH/univ --checkpoint=150 --data ../ETH/univ_test_map_full.pkl --output_path results --output_tag univ --node_type PEDESTRIAN --prediction_horizon 12     
+ ZARA1  | python evaluate-eth.py --model /data/lirh/ETH/zara1 --checkpoint=150 --data ../ETH/zara1_test_map_full.pkl --output_path results --output_tag zara1 --node_type PEDESTRIAN --prediction_horizon 12     
+ ZARA2  | python evaluate-eth.py --model /data/lirh/ETH/zara2 --checkpoint=150 --data ../ETH/zara2_test_map_full.pkl --output_path results --output_tag zara2 --node_type PEDESTRIAN --prediction_horizon 12   
+ 
+## nuScenes
 
 
 # Acknowledgments
