@@ -34,6 +34,7 @@ python nuScenes_process_data.py --version=v1.0-trainval --output_path=../process
 ```
 # Model Training
 ## ETH/UCY Pedestrian datasets
-
+To train a model on the ETH/UCY datasets, you can execute one of the following commands from within the Transformer/ directory, depending on which pedestrian scene you choose for your training.
 
 ## nuScenes dataset
+To train a model on the nuScenes dataset, you can execute one of the following commands from within the trajectron/ directory, depending on the model version you desire.
