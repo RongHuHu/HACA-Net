@@ -15,7 +15,7 @@ cd datasets/pedestrians
 python process_data.py
 ```
 * For the nuScenes dataset, the following steps are required:  
-  a. Download the orignal nuScenes dataset. Checkout the instructions here.  
+  a. Download the orignal nuScenes dataset on the [official website](https://www.nuscenes.org/"nuScenes"). Checkout the instructions in [here](https://github.com/nutonomy/nuscenes-devkit"nuscenes-devkit"). 
   b. Follow the instructions of nuScenes prediction challenge. Download and install the map expansion.  
   c. Run our script to obtain a processed version of the nuScenes dataset under datasets/nuscenes_pred:  
     `python data/process_nuscenes.py --data_root <PATH_TO_NUSCENES>`
