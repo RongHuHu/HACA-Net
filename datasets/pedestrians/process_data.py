@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import dill
 
-sys.path.append("../../trajectron")
+sys.path.append("../../Transformer")
 from environment import Environment, Scene, Node
 from utils import maybe_makedirs
 from environment import derivative_of
@@ -80,7 +80,7 @@ def augment(scene):
 
 nl = 0
 l = 0
-maybe_makedirs('../processed')
+maybe_makedirs('../../experiments/processed_data')
 data_columns = pd.MultiIndex.from_product([['position', 'velocity', 'acceleration'], ['x', 'y']])
 for desired_source in ['eth', 'hotel', 'univ', 'zara1', 'zara2']:
     for data_class in ['train', 'val', 'test']:
@@ -90,7 +90,7 @@ for desired_source in ['eth', 'hotel', 'univ', 'zara1', 'zara2']:
         env.attention_radius = attention_radius
 
         scenes = []
-        data_dict_path = os.path.join('../processed', '_'.join([desired_source, data_class]) + '.pkl')
+        data_dict_path = os.path.join('../../experiments/processed_data', '_'.join([desired_source, data_class]) + '.pkl')
 
         for subdir, dirs, files in os.walk(os.path.join('raw', desired_source, data_class)):
             for file in files:
