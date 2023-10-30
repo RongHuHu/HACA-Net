@@ -25,6 +25,6 @@ ${root}
     `-- ├── v1.0
       `-- ├── maps --> map expansionmap pack unzip here
           ├── v1.0-trainval --> metadata unzip here
-```
-  c. Run our script to obtain a processed version of the nuScenes dataset under datasets/nuscenes_pred:  
+```  
+  d. Run our script to obtain a processed version of the nuScenes dataset under datasets/nuscenes_pred:  
     `python data/process_nuscenes.py --data_root <PATH_TO_NUSCENES>`
