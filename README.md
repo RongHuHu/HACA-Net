@@ -1,6 +1,6 @@
 # Installation
 ## Environment
-**Tested OS**: Windows, Linux  
+**Tested OS**: Windows10, Ubuntu 20.04  
 Python == 3.7  
 **Install the dependencies**:   
 ```
