@@ -29,6 +29,6 @@ ${MFAA-Net root}
 ```  
 d. Run our script to obtain a processed version of the nuScenes dataset:  
 ```
-cd data
-python nuScenes_process_data-CAR.py
+cd experiments/nuScene
+python nuScenes_process_data.py --version=v1.0-trainval --output_path=../processed_data --data=../../data/v1.0/
 ```
