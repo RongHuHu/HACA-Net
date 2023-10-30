@@ -38,11 +38,11 @@ To train a model on the ETH/UCY datasets, you can execute one of the following c
 
 Dataset  | Command
  ---- | -----
- ETH  | 单元格内容 
- HOTEL  | 单元格内容 
- UNIV  | 单元格内容 
- ZARA1  | 单元格内容 
- ZARA2  | 单元格内容
+ ETH  | python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/pedestrian  --log_tag eth --augment --device "cuda:0" --data_name eth 
+ HOTEL  | python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/pedestrian  --log_tag hotel --augment --device "cuda:0" --data_name hotel  
+ UNIV  | python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/pedestrian  --log_tag univ --augment --device "cuda:0" --data_name univ  
+ ZARA1  | python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/pedestrian  --log_tag zara1 --augment --device "cuda:0" --data_name zara1  
+ ZARA2  | python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/pedestrian  --log_tag zara2 --augment --device "cuda:0" --data_name zara2 
  
 ## nuScenes dataset
 To train a model on the nuScenes dataset, you can execute one of the following commands from within the `Transformer/` directory, depending on the model version you desire.
