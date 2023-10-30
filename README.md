@@ -3,8 +3,9 @@
 **Tested OS**: Windows, Linux  
 Python == 3.7  
 **Install the dependencies**:   
-`conda create --name MFAANet python=3.7 -y`  
-`source activate MFAANet`  
+`conda create --name MFAANet python=3.7 -y
+
+source activate MFAANet`  
 `pip install -r requirements.txt`
 
 # Datasets
