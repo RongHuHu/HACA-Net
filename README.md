@@ -11,4 +11,4 @@ Python >= 3.7
   a. Download the orignal nuScenes dataset. Checkout the instructions here.  
   b. Follow the instructions of nuScenes prediction challenge. Download and install the map expansion.  
   c. Run our script to obtain a processed version of the nuScenes dataset under datasets/nuscenes_pred:  
-    'python data/process_nuscenes.py --data_root <PATH_TO_NUSCENES>'
+    `python data/process_nuscenes.py --data_root <PATH_TO_NUSCENES>`
