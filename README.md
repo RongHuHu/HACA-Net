@@ -1,6 +1,5 @@
-# THE MOST THANKFUL THINGS
-https://github.com/StanfordASL/Trajectron-plus-plus.
-
-Without this repo, I could not complete my whole project!
-
-All of my project code is based on this repo.
+# Installation
+## Environment
+**Tested OS**: Windows, Linux
+Python >= 3.7
+torch == 1.11.0+cu113
