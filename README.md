@@ -15,10 +15,10 @@ cd pedestrian_data/pedestrians
 python process_data.py
 ```
 * For the nuScenes dataset, the following steps are required:  
-  a. Download the trainval metadata of Full dataset(v1.0) on the [nuScenes website](https://www.nuscenes.org/ "nuScenes").  
-  b. Checkout the instructions [here](https://github.com/nutonomy/nuscenes-devkit "nuscenes-devkit") to install devkit for nuScenes.
+a. Download the trainval metadata of Full dataset(v1.0) on the [nuScenes website](https://www.nuscenes.org/ "nuScenes").  
+b. Checkout the instructions [here](https://github.com/nutonomy/nuscenes-devkit "nuscenes-devkit") to install devkit for nuScenes.
   `pip install nuscenes-devkit`   
-  c. Follow the instructions of [nuScenes prediction challenge](https://www.nuscenes.org/prediction?externalData=all&mapData=all&modalities=Any "prediction challenge"). Download and install the map expansionmap pack    (v1.3). Unzip the metadata and map expansion to your data folder, the file organization structure is as follows:
+c. Follow the instructions of [nuScenes prediction challenge](https://www.nuscenes.org/prediction?externalData=all&mapData=all&modalities=Any "prediction challenge"). Download and install the map expansionmap pack    (v1.3). Unzip the metadata and map expansion to your data folder, the file organization structure is as follows:
 ```
 ${root}
 ├── data
@@ -26,5 +26,5 @@ ${root}
       `-- ├── maps --> map expansionmap pack unzip here
           ├── v1.0-trainval --> metadata unzip here
 ```  
-  d. Run our script to obtain a processed version of the nuScenes dataset under datasets/nuscenes_pred:  
+d. Run our script to obtain a processed version of the nuScenes dataset under datasets/nuscenes_pred:  
     `python data/process_nuscenes.py --data_root <PATH_TO_NUSCENES>`
