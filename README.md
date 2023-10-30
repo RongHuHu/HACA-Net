@@ -8,7 +8,7 @@ Python >= 3.7
 # Datasets
 * For the ETH/UCY dataset, we already included a converted version compatible with our dataloader under datasets/eth_ucy.
 * For the nuScenes dataset, the following steps are required:
-  >Download the orignal nuScenes dataset. Checkout the instructions here.
-  >Follow the instructions of nuScenes prediction challenge. Download and install the map expansion.
-  >Run our script to obtain a processed version of the nuScenes dataset under datasets/nuscenes_pred:
+  a. Download the orignal nuScenes dataset. Checkout the instructions here.
+  b. Follow the instructions of nuScenes prediction challenge. Download and install the map expansion.
+  c. Run our script to obtain a processed version of the nuScenes dataset under datasets/nuscenes_pred:
     'python data/process_nuscenes.py --data_root <PATH_TO_NUSCENES>'
