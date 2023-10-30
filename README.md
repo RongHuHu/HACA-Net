@@ -21,11 +21,14 @@ b. Checkout the instructions [here](https://github.com/nutonomy/nuscenes-devkit 
   `pip install nuscenes-devkit`   
 c. Follow the instructions of [nuScenes prediction challenge](https://www.nuscenes.org/prediction?externalData=all&mapData=all&modalities=Any "prediction challenge"). Download and install the map expansionmap pack    (v1.3). Unzip the metadata and map expansion to your data folder, the file organization structure is as follows:
 ```
-${root}
+${MFAA-Net root}
 ├── data
     `-- ├── v1.0
       `-- ├── maps --> map expansionmap pack unzip here
           ├── v1.0-trainval --> metadata unzip here
 ```  
-d. Run our script to obtain a processed version of the nuScenes dataset under datasets/nuscenes_pred:  
-    `python data/process_nuscenes.py --data_root <PATH_TO_NUSCENES>`
+d. Run our script to obtain a processed version of the nuScenes dataset:  
+```
+cd data
+python nuScenes_process_data-CAR.py
+```
