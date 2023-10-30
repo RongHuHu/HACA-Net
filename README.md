@@ -32,3 +32,8 @@ d. Run our script to obtain a processed version of the nuScenes dataset:
 cd experiments/nuScene
 python nuScenes_process_data.py --version=v1.0-trainval --output_path=../processed_data --data=../../data/v1.0/
 ```
+# Model Training
+## ETH/UCY Pedestrian datasets
+
+
+## nuScenes dataset
