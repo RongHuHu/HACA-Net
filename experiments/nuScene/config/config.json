@@ -1,0 +1,164 @@
+{
+  "batch_size": 256,
+  "grad_clip": 0.5,
+  "learning_rate_style": "exp",
+  "learning_rate": 0.001,
+  "min_learning_rate": 1e-05,
+  "learning_decay_rate": 0.9999,
+  "prediction_horizon": 12,
+  "minimum_history_length": 8,
+  "maximum_history_length": 8,
+  "map_encoder": {
+      "transformer" : true,
+      "vit_param":{
+          "image_size": 100,
+          "patch_size": 25,
+          "output_size": 32,
+          "dim" : 256,
+          "deep" : 6,
+          "heads" : 8,
+          "mlp_dim" : 512,
+          "dropout" : 0.1,
+          "emb_dropout" : 0.1
+      },
+      "cnn_param": {
+          "heading_state_index": 6,
+          "patch_size": [
+              50,
+              10,
+              50,
+              90
+          ],
+          "map_channels": 3,
+          "hidden_channels": [
+              10,
+              20,
+              10,
+              1
+          ],
+          "output_size": 32,
+          "masks": [
+              5,
+              5,
+              5,
+              5
+          ],
+          "strides": [
+              1,
+              1,
+              1,
+              1
+          ],
+          "dropout": 0.5
+      }
+  },
+  "state": {
+      "PEDESTRIAN": {
+          "position": [
+              "x",
+              "y"
+          ],
+          "velocity": [
+              "x",
+              "y"
+          ],
+          "acceleration": [
+              "x",
+              "y"
+          ]
+      },
+      "VEHICLE": {
+          "position": [
+              "x",
+              "y"
+          ],
+          "velocity": [
+              "x",
+              "y"
+          ],
+          "acceleration": [
+              "x",
+              "y"
+          ],
+          "heading": [
+              "\u00b0",
+              "d\u00b0"
+          ]
+      }
+  },
+  "pred_state": {
+      "VEHICLE": {
+          "position": [
+              "x",
+              "y"
+          ]
+      },
+      "PEDESTRIAN": {
+          "position": [
+              "x",
+              "y"
+          ]
+      }   
+  },
+
+  "edge_addition_filter": [0.25, 0.5, 0.75, 1.0], 
+  "edge_removal_filter": [1.0, 0.0],
+  "node_freq_mult_train": true,
+  "node_freq_mult_eval": false,
+  "scene_freq_mult_train": false,
+  "scene_freq_mult_eval": false,
+  "scene_freq_mult_viz": false,
+  "augment": true,
+  "override_attention_radius": [],
+  "fusion_hist_map_layer":1,
+  "mlp_layer": 2,
+  "max_lane_num": 3,
+  "sample_num": 10,
+  "transformer": {
+      "nlayers": 6,
+      "nhead": 8,
+      "in_dim": 256,
+      "fdim": 512,
+      "output_size": 32
+  },
+  "lane_encoder": {
+      "VEHICLE": {
+          "nlayers": 1,
+          "map_channels": 3,
+          "embedding_size": 2,
+          "output_size": 32,
+          "kernel_size": 2,
+          "strides": 2,
+          "dropout": 0.5
+      }
+  },
+  "lane_decoder": {
+      "VEHICLE": {
+          "nlayers": 4,
+          "nhead": 2,
+          "in_dim": 256,
+          "fdim": 512,
+          "output_size": 32,
+          "dropout": 0.5
+      }
+  },
+  "dynamic": {
+    "PEDESTRIAN": {
+        "name": "SingleIntegrator", 
+        "distribution": true, 
+        "limits": {}
+    }, 
+    "VEHICLE": {
+        "name": "SingleIntegrator", 
+        "distribution": true, 
+        "limits": {
+            "max_a": 4, 
+            "min_a": -5, 
+            "max_heading_change": 0.7, 
+            "min_heading_change": -0.7
+        }
+    }
+  }, 
+  "edge_encoding": true,
+  "dynamic_edges": "yes"
+}
