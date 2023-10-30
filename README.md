@@ -12,7 +12,7 @@ pip install -r requirements.txt
 **For the ETH/UCY dataset,** 
 we've already included preprocessed data splits for the ETH and UCY Pedestrian datasets in this repository, you can see them in experiments/pedestrians/raw. In order to process them into a data format that our model can work with, execute the follwing.
 ```
-cd pedestrian_data/pedestrians
+cd data/pedestrians
 python process_data.py
 ```
 **For the nuScenes dataset, the following steps are required:**   
