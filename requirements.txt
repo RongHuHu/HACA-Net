@@ -1,7 +1,7 @@
 matplotlib==3.5.1 
 nuscenes-devkit==1.1.10
 numpy==1.21.6
-pandas==1.1.5 
+pandas==1.2.5 
 scipy==1.7.3 
 seaborn==0.11.2 
 tensorboard==2.11.2
