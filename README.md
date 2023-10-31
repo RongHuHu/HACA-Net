@@ -48,15 +48,15 @@ Dataset  | Command
 To train a model on the nuScenes dataset, you can execute one of the following commands from within the `Transformer/` directory, depending on the model version you desire.
 
 # Model Evaluation
-To evaluate a trained model, you can execute one of the following commands from within the `experiments/nuScene/` directory, depending on which pedestrian scene you choose for your evaluation.
+To evaluate a trained model, you can execute one of the following commands from within the `experiments/nuScene/` directory, depending on which pedestrian scene you choose for your evaluation. `best_epoch` is the number of epochs during 150-epoch-training that performs best on the validation set.
 ## ETH/UCY
 Dataset  | Command
  ---- | -----
- ETH  | python evaluate-eth.py --model models/pedestrian/eth --checkpoint=150 --data ../processed_data/eth_test_map_full.pkl --output_path results --output_tag eth --node_type PEDESTRIAN --prediction_horizon 12    
- HOTEL  | python evaluate-eth.py --model models/pedestrian/hotel --checkpoint=150 --data ../ETH/hotel_test_map_full.pkl --output_path results --output_tag hotel --node_type PEDESTRIAN --prediction_horizon 12    
- UNIV  | python evaluate-eth.py --model models/pedestrian/univ --checkpoint=150 --data ../ETH/univ_test_map_full.pkl --output_path results --output_tag univ --node_type PEDESTRIAN --prediction_horizon 12     
- ZARA1  | python evaluate-eth.py --model models/pedestrian/zara1 --checkpoint=150 --data ../ETH/zara1_test_map_full.pkl --output_path results --output_tag zara1 --node_type PEDESTRIAN --prediction_horizon 12     
- ZARA2  | python evaluate-eth.py --model models/pedestrian/zara2 --checkpoint=150 --data ../ETH/zara2_test_map_full.pkl --output_path results --output_tag zara2 --node_type PEDESTRIAN --prediction_horizon 12   
+ ETH  | python evaluate-eth.py --model models/pedestrian/eth --checkpoint=best_epoch --data ../processed_data/eth_test_map_full.pkl --output_path results --output_tag eth --node_type PEDESTRIAN --prediction_horizon 12    
+ HOTEL  | python evaluate-eth.py --model models/pedestrian/hotel --checkpoint=best_epoch --data ../ETH/hotel_test_map_full.pkl --output_path results --output_tag hotel --node_type PEDESTRIAN --prediction_horizon 12    
+ UNIV  | python evaluate-eth.py --model models/pedestrian/univ --checkpoint=best_epoch --data ../ETH/univ_test_map_full.pkl --output_path results --output_tag univ --node_type PEDESTRIAN --prediction_horizon 12     
+ ZARA1  | python evaluate-eth.py --model models/pedestrian/zara1 --checkpoint=best_epoch --data ../ETH/zara1_test_map_full.pkl --output_path results --output_tag zara1 --node_type PEDESTRIAN --prediction_horizon 12     
+ ZARA2  | python evaluate-eth.py --model models/pedestrian/zara2 --checkpoint=best_epoch --data ../ETH/zara2_test_map_full.pkl --output_path results --output_tag zara2 --node_type PEDESTRIAN --prediction_horizon 12   
  
 ## nuScenes
 To evaluate a model on the nuScenes dataset, you can execute one of the following commands from within the `experiments/nuScene/` directory, depending on the model version you desire.
