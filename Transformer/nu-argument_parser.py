@@ -5,7 +5,7 @@ parser.add_argument(
     "--conf",
     help="path to json config file for hyperparameters",
     type=str,
-    default='../experiments/nuScene/config/config.json')
+    default='../experiments/nuScene/config/nu-config.json')
 
 parser.add_argument("--debug",
                     help="disable all disk writing processes.",
@@ -83,7 +83,7 @@ parser.add_argument('--vit',
 parser.add_argument("--data_dir",
                     help="what dir to look in for data",
                     type=str,
-                    default='../experiments/data1/')
+                    default='../experiments/processed_data')   # data1/')
 
 parser.add_argument("--data_name",
                     help="what file to load for training data",
