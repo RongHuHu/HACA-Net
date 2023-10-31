@@ -48,7 +48,7 @@ Dataset  | Command
 To train a model on the nuScenes dataset, you can execute one of the following commands from within the `Transformer/` directory, depending on the model version you desire.
 
 # Model Evaluation
-To evaluate a trained model, you can execute one of the following commands from within the `experiments/nuScene/` directory, depending on which pedestrian scene you choose for your evaluation. `best_epoch` is the number of epochs during 150-epoch-training that performs best on the validation set. Before evaluation, please comment out `x = self.norm(x)` on line 400 of `Transformer_model.py` under `Transformer/model/components/`. This is used to speed up training and has an adverse impact on the evaluation results.
+To evaluate a trained model, you can execute one of the following commands from within the `experiments/nuScene/` directory, depending on which pedestrian scene you choose for your evaluation. Before evaluation, please comment out `x = self.norm(x)` on line 400 of `Transformer_model.py` under `Transformer/model/components/`. This is used to speed up training and has an adverse impact on the evaluation results. `best_epoch` is the number of epochs during 150-epoch-training that performs best on the validation set. 
 ## ETH/UCY
 Dataset  | Command
  ---- | -----
@@ -57,6 +57,12 @@ Dataset  | Command
  UNIV  | python evaluate-eth.py --model models/pedestrian/univ --checkpoint=best_epoch --data ../ETH/univ_test_map_full.pkl --output_path results --output_tag univ --node_type PEDESTRIAN --prediction_horizon 12     
  ZARA1  | python evaluate-eth.py --model models/pedestrian/zara1 --checkpoint=best_epoch --data ../ETH/zara1_test_map_full.pkl --output_path results --output_tag zara1 --node_type PEDESTRIAN --prediction_horizon 12     
  ZARA2  | python evaluate-eth.py --model models/pedestrian/zara2 --checkpoint=best_epoch --data ../ETH/zara2_test_map_full.pkl --output_path results --output_tag zara2 --node_type PEDESTRIAN --prediction_horizon 12   
+
+Based on observation and analysis, we provide the following numbers as references for `best_epoch` of the five datasets:
+
+Dataset | ETH | HOTEL | UNIV | ZARA1 | ZARA2
+---- | ----- | ----- | ----- | ----- | -----
+best_epoch | ----- | ----- | 132 | ----- | -----
  
 ## nuScenes
 To evaluate a model on the nuScenes dataset, you can execute one of the following commands from within the `experiments/nuScene/` directory, depending on the model version you desire.
