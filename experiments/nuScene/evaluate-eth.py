@@ -58,12 +58,12 @@ def compute_road_violations(predicted_trajs, map, channel):
 
 
 def load_model(model_dir, env, ts=100):
-    model_registrar = ModelRegistrar(model_dir, 'cuda:7')
+    model_registrar = ModelRegistrar(model_dir, 'cuda:0')
     model_registrar.load_models(ts)
     with open(os.path.join(model_dir, 'config.json'), 'r') as config_json:
         hyperparams = json.load(config_json)
 
-    trajectron = Trajectron(model_registrar, hyperparams, None, 'cuda:7')
+    trajectron = Trajectron(model_registrar, hyperparams, None, 'cuda:0')
 
     trajectron.set_environment(env)
     return trajectron, hyperparams
