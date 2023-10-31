@@ -33,6 +33,8 @@ cd experiments/nuScene
 python nuScenes_process_data.py --version=v1.0-trainval --output_path=../processed_data --data=../../data/v1.0/
 ```
 # Model Training
+When training and testing the model, pay attention to the following: on the ETH/UCY datasets, the parameters of `argument_parser.py` and `config.json` are used, while the parameters of `nu-argument_parser.py` and `nu-config.json` are used on the nuScenes dataset. `argument_parser.py` and `nu-argument_parser.py` are under the `Transformer/`,  `config.json` and `nu-config.json` are under the `experiments/nuScene/config/`.
+
 ## ETH/UCY
 To train a model on the ETH/UCY datasets, you can execute one of the following commands from within the `Transformer/` directory, depending on which pedestrian scene you choose for your training.
 
