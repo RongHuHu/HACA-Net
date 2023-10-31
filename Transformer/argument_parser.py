@@ -83,7 +83,7 @@ parser.add_argument('--vit',
 parser.add_argument("--data_dir",
                     help="what dir to look in for data",
                     type=str,
-                    default='../experiments/processed_data1')   # ETH/')
+                    default='../experiments/processed_data')   # ETH/')
 
 parser.add_argument("--data_name",
                     help="what file to load for training data",
