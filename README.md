@@ -1,7 +1,7 @@
 # Installation
 ## Environment
 **Tested OS**: Windows10, Ubuntu 20.04  
-Python == 3.7  
+Python >= 3.7.1  
 **Install the dependencies**:   
 ```
 conda create --name Multimodal_Transformer python=3.7 -y  
