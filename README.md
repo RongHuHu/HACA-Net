@@ -33,7 +33,7 @@ cd experiments/nuScene
 python nuScenes_process_data.py --version=v1.0-trainval --output_path=../processed_data --data=../../data/v1.0/
 ```
 # Model Training
-## ETH/UCY Pedestrian datasets
+## ETH/UCY
 To train a model on the ETH/UCY datasets, you can execute one of the following commands from within the `Transformer/` directory, depending on which pedestrian scene you choose for your training.
 
 Dataset  | Command
@@ -44,7 +44,7 @@ Dataset  | Command
  ZARA1  | python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/pedestrian  --log_tag zara1 --augment --device "cuda:0" --data_name zara1  
  ZARA2  | python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/pedestrian  --log_tag zara2 --augment --device "cuda:0" --data_name zara2 
 
-## nuScenes dataset
+## nuScenes
 To train a model on the nuScenes dataset, you can execute one of the following commands from within the `Transformer/` directory, depending on the model version you desire.
 
 # Model Evaluation
@@ -66,6 +66,11 @@ best_epoch | ----- | ----- | 132 | ----- | -----
  
 ## nuScenes
 To evaluate a model on the nuScenes dataset, you can execute one of the following commands from within the `experiments/nuScene/` directory, depending on the model version you desire.
+
+# Quantitative Results
+## ETH/UCY
+Run `pes_quantitative.py` under the `experiments/nuScene/` folder to obtain quantitative results. You can obtain the results of different pedestrian datasets by changing `eth` in line 7 of the code to any one of `hotel, univ, zara1, zara2`.
+## nuScenes
 
 # Acknowledgments
 Without this repo, I could not complete my whole project:
