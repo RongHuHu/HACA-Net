@@ -48,7 +48,7 @@ Dataset  | Command
 To train a model on the nuScenes dataset, you can execute one of the following commands from within the `Transformer/` directory, depending on the model version you desire.
 
 # Model Evaluation
-To evaluate a trained model, you can execute one of the following commands from within the `experiments/nuScene/` directory, depending on which pedestrian scene you choose for your evaluation. `best_epoch` is the number of epochs during 150-epoch-training that performs best on the validation set.
+To evaluate a trained model, you can execute one of the following commands from within the `experiments/nuScene/` directory, depending on which pedestrian scene you choose for your evaluation. `best_epoch` is the number of epochs during 150-epoch-training that performs best on the validation set. During evaluation, please comment out `x = self.norm(x)` on line 400 of `Transformer_model.py` under `Transformer/model/components/`. This is used to speed up training and has an adverse impact on the evaluation results.
 ## ETH/UCY
 Dataset  | Command
  ---- | -----
