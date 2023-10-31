@@ -8,7 +8,7 @@ conda create --name Multimodal_Transformer python=3.7 -y
 source activate Multimodal_Transformer  
 pip install -r requirements.txt
 ```
-# Datasets
+## Datasets
 **For the ETH/UCY dataset,** 
 we've already included preprocessed data splits for the ETH and UCY Pedestrian datasets in this repository, you can see them in experiments/pedestrians/raw. In order to process them into a data format that our model can work with, execute the follwing.
 ```
