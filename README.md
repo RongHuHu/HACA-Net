@@ -72,6 +72,8 @@ To evaluate a model on the nuScenes dataset, you can execute one of the followin
 Run `pes_quantitative.py` under the `experiments/nuScene/` folder to obtain quantitative results. You can obtain the results of different pedestrian datasets by changing `eth` in line 7 of the code to any one of `hotel, univ, zara1, zara2`.
 ## nuScenes
 
+The above quantitative results are recommended to be obtained under Windows OS.
+
 # Acknowledgments
 Without this repo, I could not complete my whole project:
 [https://github.com/StanfordASL/Trajectron-plus-plus](https://github.com/StanfordASL/Trajectron-plus-plus)
