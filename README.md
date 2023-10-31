@@ -64,7 +64,7 @@ Based on observation and analysis, we provide the following numbers as reference
 
 Dataset | ETH | HOTEL | UNIV | ZARA1 | ZARA2
 ---- | ----- | ----- | ----- | ----- | -----
-best_epoch | ----- | ----- | 132 | ----- | -----
+best_epoch | 150 | 150 | 132 | 146 | 148
  
 ## nuScenes
 To evaluate a model on the nuScenes dataset, you can execute one of the following commands from within the `experiments/nuScene/` directory, depending on the model version you desire.
