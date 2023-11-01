@@ -76,10 +76,10 @@ best_epoch | 150 | 150 | 132 | 146 | 148
 To evaluate a model on the nuScenes dataset, you can execute one of the following commands from within the `experiments/nuScene/` directory, depending on the model version you desire.
 Model  | Command
  ---- | -----
- Base  | `python evaluate-nu.py --model models/nuscene/soc --checkpoint=12 --data ../processed_data/nuScenes_test_map_full.pkl --output_path results --output_tag soc --node_type VEHICLE --prediction_horizon 12`
- Base + Ego-robot  | `python evaluate-nu.py --model models/nuscene/soc_robot --checkpoint=12 --data ../processed_data/nuScenes_test_map_full.pkl --output_path results --output_tag soc_robot --node_type VEHICLE --prediction_horizon 12`  
- Base + Maps  | `python evaluate-nu.py --model models/nuscene/soc_map --checkpoint=12 --data ../processed_data/nuScenes_test_map_full.pkl --output_path results --output_tag soc_map --node_type VEHICLE --prediction_horizon 12`  
- Base + Ego-robot, Maps  | `python evaluate-nu.py --model models/nuscene/soc_map_robot --checkpoint=12 --data ../processed_data/nuScenes_test_map_full.pkl --output_path results --output_tag soc_map_robot --node_type VEHICLE --prediction_horizon 12`  
+ Base  | `python evaluate-nu.py --model models/nuscene/soc --checkpoint=best_epoch --data ../processed_data/nuScenes_test_map_full.pkl --output_path results --output_tag soc --node_type VEHICLE --prediction_horizon 12`
+ Base + Ego-robot  | `python evaluate-nu.py --model models/nuscene/soc_robot --checkpoint=best_epoch --data ../processed_data/nuScenes_test_map_full.pkl --output_path results --output_tag soc_robot --node_type VEHICLE --prediction_horizon 12`  
+ Base + Maps  | `python evaluate-nu.py --model models/nuscene/soc_map --checkpoint=best_epoch --data ../processed_data/nuScenes_test_map_full.pkl --output_path results --output_tag soc_map --node_type VEHICLE --prediction_horizon 12`  
+ Base + Ego-robot, Maps  | `python evaluate-nu.py --model models/nuscene/soc_map_robot --checkpoint=best_epoch --data ../processed_data/nuScenes_test_map_full.pkl --output_path results --output_tag soc_map_robot --node_type VEHICLE --prediction_horizon 12`  
 
 `best_epoch` is the number of epochs during 20-epoch-training that performs best on the validation set. Based on observation and analysis, we provide the following numbers as references for `best_epoch` of the four models:
 Model | Base | Base + Ego-robot | Base + Maps | Base + Ego-robot, Maps 
