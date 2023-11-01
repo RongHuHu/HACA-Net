@@ -94,5 +94,5 @@ Run `nu_quantitative.py` under the `experiments/nuScene/` folder to obtain quant
 
 
 # Acknowledgments
-Without this repo, I could not complete my whole project:
-[https://github.com/StanfordASL/Trajectron-plus-plus](https://github.com/StanfordASL/Trajectron-plus-plus)
+Without this repo, I could not complete my project:
+[Trajectron-plus-plus](https://github.com/StanfordASL/Trajectron-plus-plus)
