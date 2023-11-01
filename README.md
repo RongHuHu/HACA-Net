@@ -19,7 +19,7 @@ python process_data.py
 a. Download the trainval metadata of Full dataset(v1.0) on the [nuScenes website](https://www.nuscenes.org/ "nuScenes").  
 b. Checkout the instructions [here](https://github.com/nutonomy/nuscenes-devkit "nuscenes-devkit") to install devkit for nuScenes.
   `pip install nuscenes-devkit`   
-c. Follow the instructions of [nuScenes prediction challenge](https://www.nuscenes.org/prediction?externalData=all&mapData=all&modalities=Any "prediction challenge"). Download and install the map expansionmap pack (v1.1). Unzip the metadata and map expansion to your data folder, the file organization structure is as follows:
+c. Follow the instructions of [nuScenes prediction challenge](https://www.nuscenes.org/prediction?externalData=all&mapData=all&modalities=Any "prediction challenge"). Download and install the map expansionmap pack (v1.3). Unzip the metadata and map expansion to your data folder, the file organization structure is as follows:
 ```
 ${MFAA-Net root}
 ├── data
