@@ -53,7 +53,7 @@ Model  | Command
  Base  | python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/nuscene  --log_tag soc --augment --device "cuda:0" 
  Base + Ego-robot  | python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/nuscene  --log_tag soc_robot --augment --device "cuda:0" --incl_robot_node  
  Base + Maps  | python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/nuscene  --log_tag soc_map --augment --device "cuda:0" --map_vit_encoding  
- Base + Ego-robot,Maps  | python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/nuscene  --log_tag soc_map_robot --augment --device "cuda:0" --incl_robot_node --map_vit_encoding  
+ Base + Ego-robot, Maps  | python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/nuscene  --log_tag soc_map_robot --augment --device "cuda:0" --incl_robot_node --map_vit_encoding  
 
 # Model Evaluation
 To evaluate a trained model, you can execute one of the following commands from within the `experiments/nuScene/` directory, depending on which pedestrian scene you choose for your evaluation. Before evaluation, please comment out `x = self.norm(x)` on line 400 of `Transformer_model.py` under `Transformer/model/components/`. This is used to speed up training and has an adverse impact on the evaluation results. `best_epoch` is the number of epochs during 150-epoch-training that performs best on the validation set. 
