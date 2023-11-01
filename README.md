@@ -76,11 +76,10 @@ best_epoch | 150 | 150 | 132 | 146 | 148
 To evaluate a model on the nuScenes dataset, you can execute one of the following commands from within the `experiments/nuScene/` directory, depending on the model version you desire.
 Model  | Command
  ---- | -----
- Base  | python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/pedestrian  --log_tag eth --augment --device "cuda:0" --data_name eth 
- HOTEL  | python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/pedestrian  --log_tag hotel --augment --device "cuda:0" --data_name hotel  
- UNIV  | python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/pedestrian  --log_tag univ --augment --device "cuda:0" --data_name univ  
- ZARA1  | python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/pedestrian  --log_tag zara1 --augment --device "cuda:0" --data_name zara1  
- ZARA2  | python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/pedestrian  --log_tag zara2 --augment --device "cuda:0" --data_name zara2 
+ Base  | python evaluate-nu.py --model models/nuscene/soc --checkpoint=12 --data ../processed_data/nuScenes_test_map_full.pkl --output_path results --output_tag soc --node_type VEHICLE --prediction_horizon 12
+ Base + Ego-robot  | python evaluate-nu.py --model models/nuscene/soc_robot --checkpoint=12 --data ../processed_data/nuScenes_test_map_full.pkl --output_path results --output_tag soc_robot --node_type VEHICLE --prediction_horizon 12  
+ Base + Maps  | python evaluate-nu.py --model models/nuscene/soc_map --checkpoint=12 --data ../processed_data/nuScenes_test_map_full.pkl --output_path results --output_tag soc_map --node_type VEHICLE --prediction_horizon 12  
+ Base + Ego-robot, Maps  | python evaluate-nu.py --model models/nuscene/soc_map_robot --checkpoint=12 --data ../processed_data/nuScenes_test_map_full.pkl --output_path results --output_tag soc_map_robot --node_type VEHICLE --prediction_horizon 12  
 
 
 # Quantitative Results
