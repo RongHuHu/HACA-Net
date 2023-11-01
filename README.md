@@ -89,9 +89,10 @@ best_epoch | 12 | 12 | 12 | 12
 # Quantitative Results
 ## ETH/UCY
 Run `pes_quantitative.py` under the `experiments/nuScene/` folder to obtain quantitative results. You can obtain the results of different pedestrian datasets by changing `eth` in line 7 of the code to any one of `hotel, univ, zara1, zara2`.
+If you want to get quantitative results under different prediction horizons, please modify the number in brackets in line 9 of the code `for ph in [12]:`.
 ## nuScenes
-Run `nu_quantitative.py` under the `experiments/nuScene/` folder to obtain quantitative results. You can obtain the results of different pedestrian datasets by changing `eth` in line 7 of the code to any one of `hotel, univ, zara1, zara2`.
-
+Run `nu_quantitative.py` under the `experiments/nuScene/` folder to obtain quantitative results. You can obtain the results of different pedestrian datasets by changing `soc` in line 7 of the code to any one of `soc_robot, soc_map, soc_map_robot`.
+If you want to get quantitative results under different prediction horizons, please modify the number in brackets in line 9 of the code `for ph in [12]:`.
 
 # Acknowledgments
 Without this repo, I could not complete my project:
