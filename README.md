@@ -1,3 +1,5 @@
+![image](https://github.com/RongHuHu/MFAA-Net/assets/61187551/82e5bc7d-c002-4777-b6c7-cfe752f840a8)
+This repository contains the code for "Multi-scale Feature Aggregation Autoregressive Network for Multi-Agent Trajectory Prediction" by Ronghao Li, Yin Shen.
 # Installation
 ## Environment
 **Tested OS**: Windows10, Ubuntu 20.04  
