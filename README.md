@@ -2,7 +2,7 @@
 ## Environment
 **Tested OS**: Windows10, Ubuntu 20.04  
 Python >= 3.7.1  
-torch==1.11.0+cu113
+torch==1.11.0+cu113  
 nuscenes-devkit==1.1.10
 
 **Install the dependencies**:   
