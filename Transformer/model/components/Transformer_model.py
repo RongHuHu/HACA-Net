@@ -397,7 +397,7 @@ class ConvLayer(nn.Module):
     def forward(self, x):
         x = self.downConv(x.permute(0, 2, 1))
         #print('x21',x.size())
-        #x = self.norm(x)
+        x = self.norm(x)
         #print('x22',x.size())
         x = self.activation(x)
         #print('x23',x.size())
