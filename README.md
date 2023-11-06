@@ -65,7 +65,8 @@ Model  | Command
  Base + Social-graphs, Ego-robot, Maps  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/nuscene  --log_tag soc_map_robot --augment --device "cuda:0" --incl_robot_node --map_vit_encoding` 
 
 # Model Evaluation
-To evaluate a trained model, you can execute one of the following commands from within the `experiments/nuScene/` directory, depending on which pedestrian scene you choose for your evaluation. Before evaluation, please comment out `x = self.norm(x)` on line 400 of `Transformer_model.py` under `Transformer/model/components/`. This is used to speed up training and has an adverse impact on the evaluation results.  
+To evaluate a trained model, you can execute one of the following commands from within the `experiments/nuScene/` directory, depending on which pedestrian scene you choose for your evaluation. 
+**Before evaluation, please comment out `x = self.norm(x)` on line 400 of `Transformer_model.py` under `Transformer/model/components/`.** This is used to speed up training and has an adverse impact on the evaluation results.  
 ## ETH/UCY
 To evaluate a model on the nuScenes dataset, you can execute one of the following commands from within the `experiments/nuScene/` directory, depending on which pedestrian scene you choose for your evaluation. You can choose the future horizon by modifying the parameter value in the following command (`prediction_horizon=12/8` corresponds to predicting the 4.8s/3.2s future respectively).
 
