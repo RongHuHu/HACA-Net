@@ -67,6 +67,8 @@ Model  | Command
 # Model Evaluation
 To evaluate a trained model, you can execute one of the following commands from within the `experiments/nuScene/` directory, depending on which pedestrian scene you choose for your evaluation. Before evaluation, please comment out `x = self.norm(x)` on line 400 of `Transformer_model.py` under `Transformer/model/components/`. This is used to speed up training and has an adverse impact on the evaluation results.  
 ## ETH/UCY
+To evaluate a model on the nuScenes dataset, you can execute one of the following commands from within the `experiments/nuScene/` directory, depending on which pedestrian scene you choose for your evaluation. You can choose the future horizon by modifying the parameter value in the following command (`prediction_horizon=12/8` corresponds to predicting the 4.8s/3.2s future respectively).
+
 Dataset  | Command
  ---- | -----
  ETH  | `python evaluate-eth.py --model models/pedestrian/eth --checkpoint=best_epoch --data ../processed_data/eth_test_map_full.pkl --output_path results --output_tag eth --node_type PEDESTRIAN --prediction_horizon 12`    
@@ -82,7 +84,8 @@ Dataset | ETH | HOTEL | UNIV | ZARA1 | ZARA2
 best_epoch | 150 | 150 | 132 | 146 | 148
  
 ## nuScenes
-To evaluate a model on the nuScenes dataset, you can execute one of the following commands from within the `experiments/nuScene/` directory, depending on the model version you desire.
+To evaluate a model on the nuScenes dataset, you can execute one of the following commands from within the `experiments/nuScene/` directory, depending on the model version you desire. You can choose the future horizon by modifying the parameter value in the following command (`prediction_horizon=12/8/6/4/2` corresponds to predicting the 6s/4s/3s/2s/1s future respectively).
+
 Model  | Command
  ---- | -----
  Base  | `python evaluate-nu.py --model models/nuscene/his --checkpoint=20 --data ../processed_data/nuScenes_test_map_full.pkl --output_path results --output_tag his --node_type VEHICLE --prediction_horizon 12`
