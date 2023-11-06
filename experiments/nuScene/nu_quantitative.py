@@ -4,7 +4,7 @@ import glob
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
-for model in ['soc']:    
+for model in ['his']:    
     print(f"Results for: {model}")
     for ph in [12]:
         print(f"-----------------PH: {ph} -------------------")
@@ -56,7 +56,7 @@ for model in ['soc']:
         del perf_df     
                 
         perf_df = pd.DataFrame()
-        for f in glob.glob(f"results/{model}_{ph}_rv.csv"):
+        for f in glob.glob(f"results/{model}*_{ph}_rv.csv"):
             dataset_df = pd.read_csv(f)
             dataset_df['model'] = model
             perf_df = perf_df.append(dataset_df, ignore_index=True)
