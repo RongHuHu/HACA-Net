@@ -55,10 +55,14 @@ Dataset  | Command
 To train a model on the nuScenes dataset, you can execute one of the following commands from within the `Transformer/` directory, depending on the model version you desire.
 Model  | Command
  ---- | -----
- Base  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/nuscene  --log_tag soc --augment --device "cuda:0"` 
- Base + Ego-robot  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/nuscene  --log_tag soc_robot --augment --device "cuda:0" --incl_robot_node`  
- Base + Maps  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/nuscene  --log_tag soc_map --augment --device "cuda:0" --map_vit_encoding`  
- Base + Ego-robot, Maps  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/nuscene  --log_tag soc_map_robot --augment --device "cuda:0" --incl_robot_node --map_vit_encoding`  
+ Base  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/nuscene  --log_tag his --augment --device "cuda:0" --no_edge_encoding`
+ Base + Ego-robot  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/nuscene  --log_tag his_robot --augment --device "cuda:0" --incl_robot_node --no_edge_encoding`  
+ Base + Maps  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/nuscene  --log_tag his_map --augment --device "cuda:0" --map_vit_encoding --no_edge_encoding`  
+ Base + Ego-robot, Maps  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/nuscene  --log_tag his_map_robot --augment --device "cuda:0" --incl_robot_node --map_vit_encoding --no_edge_encoding` 
+ Base + Social-graphs  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/nuscene  --log_tag soc --augment --device "cuda:0"` 
+ Base + Social-graphs, Ego-robot  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/nuscene  --log_tag soc_robot --augment --device "cuda:0" --incl_robot_node`  
+ Base + Social-graphs, Maps  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/nuscene  --log_tag soc_map --augment --device "cuda:0" --map_vit_encoding`  
+ Base + Social-graphs, Ego-robot, Maps  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/nuscene  --log_tag soc_map_robot --augment --device "cuda:0" --incl_robot_node --map_vit_encoding` 
 
 # Model Evaluation
 To evaluate a trained model, you can execute one of the following commands from within the `experiments/nuScene/` directory, depending on which pedestrian scene you choose for your evaluation. Before evaluation, please comment out `x = self.norm(x)` on line 400 of `Transformer_model.py` under `Transformer/model/components/`. This is used to speed up training and has an adverse impact on the evaluation results.  
@@ -81,11 +85,15 @@ best_epoch | 150 | 150 | 132 | 146 | 148
 To evaluate a model on the nuScenes dataset, you can execute one of the following commands from within the `experiments/nuScene/` directory, depending on the model version you desire.
 Model  | Command
  ---- | -----
- Base  | `python evaluate-nu.py --model models/nuscene/soc --checkpoint=20 --data ../processed_data/nuScenes_test_map_full.pkl --output_path results --output_tag soc --node_type VEHICLE --prediction_horizon 12`
- Base + Ego-robot  | `python evaluate-nu.py --model models/nuscene/soc_robot --checkpoint=20 --data ../processed_data/nuScenes_test_map_full.pkl --output_path results --output_tag soc_robot --node_type VEHICLE --prediction_horizon 12`  
- Base + Maps  | `python evaluate-nu.py --model models/nuscene/soc_map --checkpoint=20 --data ../processed_data/nuScenes_test_map_full.pkl --output_path results --output_tag soc_map --node_type VEHICLE --prediction_horizon 12`  
- Base + Ego-robot, Maps  | `python evaluate-nu.py --model models/nuscene/soc_map_robot --checkpoint=20 --data ../processed_data/nuScenes_test_map_full.pkl --output_path results --output_tag soc_map_robot --node_type VEHICLE --prediction_horizon 12`  
-
+ Base  | `python evaluate-nu.py --model models/nuscene/his --checkpoint=20 --data ../processed_data/nuScenes_test_map_full.pkl --output_path results --output_tag his --node_type VEHICLE --prediction_horizon 12`
+ Base + Ego-robot  | `python evaluate-nu.py --model models/nuscene/his_robot --checkpoint=20 --data ../processed_data/nuScenes_test_map_full.pkl --output_path results --output_tag his_robot --node_type VEHICLE --prediction_horizon 12`  
+ Base + Maps  | `python evaluate-nu.py --model models/nuscene/his_map --checkpoint=20 --data ../processed_data/nuScenes_test_map_full.pkl --output_path results --output_tag his_map --node_type VEHICLE --prediction_horizon 12`  
+ Base + Ego-robot, Maps  | `python evaluate-nu.py --model models/nuscene/his_map_robot --checkpoint=20 --data ../processed_data/nuScenes_test_map_full.pkl --output_path results --output_tag his_map_robot --node_type VEHICLE --prediction_horizon 12`  
+ Base + Social-graphs  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/nuscene  --log_tag soc --augment --device "cuda:0"` 
+ Base + Social-graphs, Ego-robot  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/nuscene  --log_tag soc_robot --augment --device "cuda:0" --incl_robot_node`  
+ Base + Social-graphs, Maps  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/nuscene  --log_tag soc_map --augment --device "cuda:0" --map_vit_encoding`  
+ Base + Social-graphs, Ego-robot, Maps  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/nuscene  --log_tag soc_map_robot --augment --device "cuda:0" --incl_robot_node --map_vit_encoding` 
+ 
 # Quantitative Results
 ## ETH/UCY
 Run `pes_quantitative.py` under the `experiments/nuScene/` folder to obtain quantitative results. You can obtain the results of different pedestrian datasets by changing `eth` in line 7 of the code to any one of `hotel, univ, zara1, zara2`.
