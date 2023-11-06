@@ -100,7 +100,7 @@ Model  | Command
  
 # Quantitative Results
 ## ETH/UCY
-Run `pes_quantitative.py` under the `experiments/nuScene/` folder to obtain quantitative results. You can obtain the results of different pedestrian datasets by changing `eth` in line 7 of the code to any one of `hotel, univ, zara1, zara2`.
+Run `pes_quantitative.py` under the `experiments/nuScene/` folder to obtain quantitative results. You can obtain the results of different pedestrian datasets by changing `eth` in line 7 of the code to any one of `eth, hotel, univ, zara1, zara2`.
 If you want to get quantitative results under different prediction horizons, please modify the number in brackets in line 9 of the code `for ph in [12]:`.
 ## nuScenes
 Run `nu_quantitative.py` under the `experiments/nuScene/` folder to obtain quantitative results. You can obtain the results of different model versions by changing `his` in line 7 of the code to any one of `his, his_robot, his_map, his_map_robot, soc, soc_robot, soc_map, soc_map_robot`.
