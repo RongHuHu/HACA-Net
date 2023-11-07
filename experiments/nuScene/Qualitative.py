@@ -31,12 +31,12 @@ eval_scenes = eval_env.scenes
 ph = 6
 log_dir = './models'
 
-model_dir = os.path.join(log_dir, '/data/lirh/experiments/nuSc/best/his_map_robot/his4-pre8/his_map_robot_car') 
-# model_dir = os.path.join(log_dir, '/data/lirh/trajectron/vel_ee') 
-eval_stg, hyp = load_model(model_dir, eval_env, ts=12)
+model_dir = os.path.join(log_dir, '/data/lirh/nuscene/his_map_robot') 
+# model_dir = os.path.join(log_dir, '/data/lirh/experiments/nuSc/best/his_map_robot/his4-pre8/his_map_robot_car') 
+eval_stg, hyp = load_model(model_dir, eval_env, ts=20) #ts=12
 
-model_dir2 = os.path.join(log_dir, '/data/lirh/experiments/nuSc/best/his_map_robot/his4-pre8/his_map_robot_car') 
-# model_dir = os.path.join(log_dir, '/data/lirh/trajectron/vel_ee') 
+model_dir2 = os.path.join(log_dir, '/data/lirh/nuscene/his_map_robot') 
+# model_dir = os.path.join(log_dir, '/data/lirh/experiments/nuSc/best/his_map_robot/his4-pre8/his_map_robot_car') 
 eval_stg2, hyp2 = load_model(model_dir2, eval_env, ts=2)
 
 scene = eval_scenes[16]
@@ -121,7 +121,7 @@ with torch.no_grad():
                                       num_samples=1,
                                       gmm_mode=True)                 
 
-
+###############################################################################
     # Plot predicted timestep for random scene in map
     my_patch = (x_min, y_min, x_max, y_max)
     #fig, ax = nusc_map.render_map_patch(my_patch, layers, figsize=(10, 10), alpha=0.1, render_egoposes_range=False)
