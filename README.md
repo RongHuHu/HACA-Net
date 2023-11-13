@@ -52,7 +52,7 @@ Dataset  | Command
  ZARA2  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/pedestrian  --log_tag zara2 --augment --device "cuda:0" --data_name zara2` 
 
 ## nuScenes
-To train a model on the nuScenes dataset, you can execute one of the following commands from within the `Transformer/` directory, depending on the model version you desire.
+To train a model on the nuScenes dataset, you can execute one of the following commands from within the `Transformer/` directory, depending on the model version you desire. In particular, if the model version is Base + Social-graphs + Ego-robot + Maps, change `"learning_rate": 0.003` in `nu-config.json` under `experiments/nuScene/config/` to `"learning_rate ": 0.0045`.
 Model  | Command
  ---- | -----
  Base  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/nuscene  --log_tag his --augment --device "cuda:0" --no_edge_encoding`
