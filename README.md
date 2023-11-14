@@ -93,10 +93,10 @@ Model  | Command
  Base + Ego-robot  | `python evaluate-nu.py --model models/nuscene/his_robot --checkpoint=20 --data ../processed_data/nuScenes_test_map_full.pkl --output_path results --output_tag his_robot --node_type VEHICLE --prediction_horizon 12`  
  Base + Maps  | `python evaluate-nu.py --model models/nuscene/his_map --checkpoint=20 --data ../processed_data/nuScenes_test_map_full.pkl --output_path results --output_tag his_map --node_type VEHICLE --prediction_horizon 12`  
  Base + Ego-robot, Maps  | `python evaluate-nu.py --model models/nuscene/his_map_robot --checkpoint=20 --data ../processed_data/nuScenes_test_map_full.pkl --output_path results --output_tag his_map_robot --node_type VEHICLE --prediction_horizon 12`  
- Base + Social-graphs  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/nuscene  --log_tag soc --augment --device "cuda:0"` 
- Base + Social-graphs, Ego-robot  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/nuscene  --log_tag soc_robot --augment --device "cuda:0" --incl_robot_node`  
- Base + Social-graphs, Maps  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/nuscene  --log_tag soc_map --augment --device "cuda:0" --map_vit_encoding`  
- Base + Social-graphs, Ego-robot, Maps  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/nuscene  --log_tag soc_map_robot --augment --device "cuda:0" --incl_robot_node --map_vit_encoding` 
+ Base + Social-graphs  | `python evaluate-nu.py --model models/nuscene/soc --checkpoint=20 --data ../processed_data/nuScenes_test_map_full.pkl --output_path results --output_tag soc --node_type VEHICLE --prediction_horizon 12` 
+ Base + Social-graphs, Ego-robot  | `python evaluate-nu.py --model models/nuscene/soc_robot --checkpoint=20 --data ../processed_data/nuScenes_test_map_full.pkl --output_path results --output_tag soc_robot --node_type VEHICLE --prediction_horizon 12`   
+ Base + Social-graphs, Maps  | `python evaluate-nu.py --model models/nuscene/soc_map --checkpoint=20 --data ../processed_data/nuScenes_test_map_full.pkl --output_path results --output_tag soc_map --node_type VEHICLE --prediction_horizon 12`  
+ Base + Social-graphs, Ego-robot, Maps  | `python evaluate-nu.py --model models/nuscene/soc_map_robot --checkpoint=9 --data ../processed_data/nuScenes_test_map_full.pkl --output_path results --output_tag soc_map_robot --node_type VEHICLE --prediction_horizon 12`
  
 # Quantitative Results
 ## ETH/UCY
