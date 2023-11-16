@@ -41,15 +41,15 @@ python nuScenes_process_data.py --version=v1.0-trainval --output_path=../process
 When training and testing the model, pay attention to the following: **on the ETH/UCY datasets**, the parameters of `argument_parser.py` and `config.json` are used; while the parameters of `nu-argument_parser.py` and `nu-config.json` are used **on the nuScenes dataset**. `argument_parser.py` and `nu-argument_parser.py` are under the `Transformer/`,  `config.json` and `nu-config.json` are under the `experiments/nuScene/config/`.
 
 ## ETH/UCY
-To train a model on the ETH/UCY datasets, you can execute one of the following commands from within the `Transformer/` directory, depending on which pedestrian scene you choose for your training.
+To train a model on the ETH/UCY datasets, you can execute one of the following commands from within the `Transformer/` directory, depending on which pedestrian scene you choose for your training. The following commands are all based on `Base` mode. If you wish to use the `Base + Social-graphs` mode commands, please remove `--no_edge_encoding` from each command.
 
 Dataset  | Command
  ---- | -----
- ETH  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/pedestrian  --log_tag eth --augment --device "cuda:0" --data_name eth` 
- HOTEL  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/pedestrian  --log_tag hotel --augment --device "cuda:0" --data_name hotel`  
- UNIV  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/pedestrian  --log_tag univ --augment --device "cuda:0" --data_name univ`  
- ZARA1  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/pedestrian  --log_tag zara1 --augment --device "cuda:0" --data_name zara1`  
- ZARA2  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/pedestrian  --log_tag zara2 --augment --device "cuda:0" --data_name zara2` 
+ ETH  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/pedestrian  --log_tag eth --augment --device "cuda:0" --data_name eth --no_edge_encoding` 
+ HOTEL  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/pedestrian  --log_tag hotel --augment --device "cuda:0" --data_name hotel --no_edge_encoding`  
+ UNIV  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/pedestrian  --log_tag univ --augment --device "cuda:0" --data_name univ --no_edge_encoding`  
+ ZARA1  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/pedestrian  --log_tag zara1 --augment --device "cuda:0" --data_name zara1 --no_edge_encoding`  
+ ZARA2  | `python train.py --node_freq_mult_train --log_dir ../experiments/nuScene/models/pedestrian  --log_tag zara2 --augment --device "cuda:0" --data_name zara2 --no_edge_encoding` 
 
 ## nuScenes
 To train a model on the nuScenes dataset, you can execute one of the following commands from within the `Transformer/` directory, depending on the model version you desire. In particular, if the model version is Base + Social-graphs + Ego-robot + Maps, change `"learning_rate": 0.003` in `nu-config.json` under `experiments/nuScene/config/` to `"learning_rate ": 0.0045`.
@@ -79,11 +79,15 @@ Dataset  | Command
  ZARA2  | `python evaluate-eth.py --model models/pedestrian/zara2 --checkpoint=best_epoch --data ../ETH/zara2_test_map_full.pkl --output_path results --output_tag zara2 --node_type PEDESTRIAN --prediction_horizon 12`   
 
 `best_epoch` is the number of epochs during 150-epoch-training that performs best on the validation set. Based on observation and analysis, we provide the following numbers as references for `best_epoch` of the five datasets:
-
+`Base` mode
+Dataset | ETH | HOTEL | UNIV | ZARA1 | ZARA2
+---- | ----- | ----- | ----- | ----- | -----
+best_epoch | 145 | 150 | 150 | 148 | 150
+`Base + Social-graphs` mode:
 Dataset | ETH | HOTEL | UNIV | ZARA1 | ZARA2
 ---- | ----- | ----- | ----- | ----- | -----
 best_epoch | 150 | 150 | 132 | 146 | 148
- 
+
 ## nuScenes
 To evaluate a model on the nuScenes dataset, you can execute one of the following commands from within the `experiments/nuScene/` directory, depending on the model version you desire. You can choose the future horizon by modifying the parameter value in the following command (`prediction_horizon=12/8/6/4/2` corresponds to predicting the 6s/4s/3s/2s/1s future respectively).
 
