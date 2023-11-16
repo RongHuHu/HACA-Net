@@ -78,11 +78,12 @@ Dataset  | Command
  ZARA1  | `python evaluate-eth.py --model models/pedestrian/zara1 --checkpoint=best_epoch --data ../ETH/zara1_test_map_full.pkl --output_path results --output_tag zara1 --node_type PEDESTRIAN --prediction_horizon 12`     
  ZARA2  | `python evaluate-eth.py --model models/pedestrian/zara2 --checkpoint=best_epoch --data ../ETH/zara2_test_map_full.pkl --output_path results --output_tag zara2 --node_type PEDESTRIAN --prediction_horizon 12`   
 
-`best_epoch` is the number of epochs during 150-epoch-training that performs best on the validation set. Based on observation and analysis, we provide the following numbers as references for `best_epoch` of the five datasets:
+`best_epoch` is the number of epochs during 150-epoch-training that performs best on the validation set. Based on observation and analysis, we provide the following numbers as references for `best_epoch` of the five datasets:  
 `Base` mode
 Dataset | ETH | HOTEL | UNIV | ZARA1 | ZARA2
 ---- | ----- | ----- | ----- | ----- | -----
 best_epoch | 145 | 150 | 150 | 148 | 150
+
 `Base + Social-graphs` mode:
 Dataset | ETH | HOTEL | UNIV | ZARA1 | ZARA2
 ---- | ----- | ----- | ----- | ----- | -----
