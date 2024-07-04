@@ -1,4 +1,4 @@
-This repository contains the code for "Multi-scale Feature Aggregation Autoregressive Network for Multi-Agent Trajectory Prediction" by Ronghao Li, Yin Shen.
+This repository contains the code for "Cross-modal Autoregressive Network based on History Aggregation for Trajectory Prediction" by Ronghao Li, Yin Shen.
 
 # Installation
 ## Environment
