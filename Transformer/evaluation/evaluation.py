@@ -21,7 +21,7 @@ def compute_fde(predicted_trajs, gt_traj):
 
 def compute_kde_nll(predicted_trajs, gt_traj):
     kde_ll = 0.
-    log_pdf_lower_bound = -20
+    log_pdf_lower_bound = 0.5
     num_timesteps = gt_traj.shape[0]
     num_batches = predicted_trajs.shape[0]
     # where_are_nan = np.isnan(predicted_trajs)
