@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import os
 
-for model in ['zara2_wotse']:    
+for model in ['eth']:    
     print(f"Results for: {model}")
     for ph in [12]:
         print(f"-----------------PH: {ph} -------------------")
